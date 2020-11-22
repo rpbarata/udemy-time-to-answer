@@ -1,4 +1,3 @@
-
 # Time to Answer
 This project follow the [Ruby on Rails 5.x - Do início ao fim!](https://www.udemy.com/share/101vRoAEATdlhbTXQD/)
 
@@ -19,7 +18,7 @@ rails db:create
 rails db:migrate
 ```
 
-##### 2. Pupulate database
+##### 2. Populate database
 
 Run the following command to create the default administrator.
 
