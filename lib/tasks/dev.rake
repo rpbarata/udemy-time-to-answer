@@ -3,23 +3,23 @@ namespace :dev do
   DEFAULT_PASSWORD = 123_456
   DEFAULT_FILES_PATH = File.join(Rails.root, "lib", "tmp")
 
-  desc "Configura o ambiente de desenvolvimento"
+  desc "Set up the development environment"
   task setup: :environment do
     if Rails.env.development?
-      show_spinner("A apagar BD...")  { `rails db:drop` }
-      show_spinner("A criar BD...")   { `rails db:create` }
-      show_spinner("A migrar BD...")  { `rails db:migrate` }
-      show_spinner("A registar o administrador padão...")  { `rails dev:add_default_admin` }
-      show_spinner("A registar o administradores extras...") { `rails dev:add_extras_admins` }
-      show_spinner("A registar o utilizador padão...") { `rails dev:add_default_user` }
-      show_spinner("A registar os assuntos padrões...") { `rails dev:add_subjects` }
-      show_spinner("A registar as perguntas e respostas...") { `rails dev:add_answers_and_questions` }
+      show_spinner("Deleting BD...")  { `rails db:drop` }
+      show_spinner("Creating BD...")   { `rails db:create` }
+      show_spinner("Migrating BD...")  { `rails db:migrate` }
+      show_spinner("Registering the default administrator...")  { `rails dev:add_default_admin` }
+      show_spinner("Registering extra administrators...") { `rails dev:add_extras_admins` }
+      show_spinner("Registering a default user...") { `rails dev:add_default_user` }
+      show_spinner("Registering default subjects...") { `rails dev:add_subjects` }
+      show_spinner("Registering questions and answers...") { `rails dev:add_answers_and_questions` }
     else
-      puts "Tens de estar em ambiente de desenvolimento"
+      puts "You have to be in a development environment to run these tasks."
     end
   end
 
-  desc "Adiciona o administrador padrão"
+  desc "Add the default administrator"
   task add_default_admin: :environment do
     Admin.create!(
       email: "admin@admin.com",
@@ -28,7 +28,7 @@ namespace :dev do
     )
   end
 
-  desc "Adiciona o administradores extras"
+  desc "Add extra administrators"
   task add_extras_admins: :environment do
     10.times do |_i|
       Admin.create!(
@@ -39,7 +39,7 @@ namespace :dev do
     end
   end
 
-  desc "Adiciona o utilizador padrão"
+  desc "Add the default user"
   task add_default_user: :environment do
     User.create!(
       email: "user@user.com",
@@ -48,7 +48,7 @@ namespace :dev do
     )
   end
 
-  desc "Adiciona assuntos padrões"
+  desc "Adds default subjects"
   task add_subjects: :environment do
     file_name = "subjects.txt"
     file_path = File.join(DEFAULT_FILES_PATH, file_name)
@@ -58,7 +58,7 @@ namespace :dev do
     end
   end
 
-  desc "Adiciona perguntas e respostas"
+  desc "Add questions and answers"
   task add_answers_and_questions: :environment do
     Subject.all.each do |subject|
       rand(5..10).times do |_i|
@@ -102,7 +102,7 @@ namespace :dev do
       answers_array[selected_index] = create_answer_params(true)
     end
 
-    def show_spinner(msg_start, msg_end = "Concluido com sucesso!")
+    def show_spinner(msg_start, msg_end = "Successfully concluded!")
       spinner = TTY::Spinner.new("[:spinner] #{msg_start}")
       spinner.auto_spin
       yield
