@@ -1,1 +1,5 @@
-<h1>O ID da resposta seleciona é: <%= params[:answer] %></h1>
+<% if @answer.correct %>
+  <h1 style="color: green;">Parabéns, ACERTOU!</h1>
+<% else %>
+  <h1 style="color: red;">Infelizmente, ERROU!</h1>
+<% end %>
