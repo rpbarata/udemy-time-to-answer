@@ -22,7 +22,7 @@ namespace :dev do
   desc "Add the default administrator"
   task add_default_admin: :environment do
     Admin.create!(
-      email: "admin@admin.com",
+      email: "admin@mail.com",
       password: DEFAULT_PASSWORD,
       password_confirmation: DEFAULT_PASSWORD
     )
@@ -42,7 +42,7 @@ namespace :dev do
   desc "Add the default user"
   task add_default_user: :environment do
     User.create!(
-      email: "user@user.com",
+      email: "user@mail.com",
       password: DEFAULT_PASSWORD,
       password_confirmation: DEFAULT_PASSWORD
     )
