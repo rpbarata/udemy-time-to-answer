@@ -109,58 +109,58 @@
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                 <li>
                   <a>
-                        <span class="image">
-                          <%= image_tag 'img.jpg', alt:"Profile Image" %>
-                        </span>
+                    <span class="image">
+                      <%= image_tag 'img.jpg', alt:"Profile Image" %>
+                    </span>
                     <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
                     <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
                   </a>
                 </li>
                 <li>
                   <a>
-                        <span class="image">
-                          <%= image_tag 'img.jpg', alt:"Profile Image" %>
-                        </span>
+                    <span class="image">
+                      <%= image_tag 'img.jpg', alt:"Profile Image" %>
+                    </span>
                     <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
                     <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
                   </a>
                 </li>
                 <li>
                   <a>
-                        <span class="image">
-                          <%= image_tag 'img.jpg', alt:"Profile Image" %>
-                        </span>
+                    <span class="image">
+                      <%= image_tag 'img.jpg', alt:"Profile Image" %>
+                    </span>
                     <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
                     <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
                   </a>
                 </li>
                 <li>
                   <a>
-                        <span class="image">
-                          <%= image_tag 'img.jpg', alt:"Profile Image" %>
-                        </span>
+                    <span class="image">
+                      <%= image_tag 'img.jpg', alt:"Profile Image" %>
+                    </span>
                     <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
+                      <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                    </span>
                     <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
+                      Film festivals used to be do-or-die moments for movie makers. They were where...
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -205,25 +205,24 @@
      aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <%= form_with(url: users_backoffice_profile_path, model: current_user,
-                    local: true) do |form| %>
+      <%= form_with(url: users_backoffice_profile_path, model: current_user) do |form| %>
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"
-                  aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
           <h4 class="modal-title" id="myModalLabel">Avatar</h4>
         </div>
         <div class="modal-body">
           <%= form.fields_for :user_profile do |profile_form| %>
             <div class="form-group">
               <%= profile_form.label :avatar, class:"control-label" %>
-              <%= image_tag(avatar_url, alt: '...', class:"img-circle profile_img") %>
+              <%= image_tag(avatar_url, alt: '...', class:"img-circle profile_img", id: "imgAvatarLg") %>
               <%= profile_form.file_field :avatar, class:"form-control"%>
             </div>
           <% end %>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default"
-                  data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
           <%= form.submit "Salvar", class: "btn btn-primary" %>
         </div>
       <% end %>
@@ -231,7 +230,6 @@
   </div>
 </div>
 <!-- /Modal -->
-
 
 <%= javascript_include_tag 'application' %>
 <%= javascript_include_tag 'users_backoffice' %>
