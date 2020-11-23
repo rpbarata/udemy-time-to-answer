@@ -1,5 +1,7 @@
 module Jekyll
+
   module BugFilter
+
     def bugify(input)
       upstream_map = {
         "Bootstrap" => "https://github.com/twbs/bootstrap/issues/",
@@ -20,7 +22,9 @@ module Jekyll
 
       return input
     end
+
   end
+
 end
 
 Liquid::Template.register_filter(Jekyll::BugFilter)
