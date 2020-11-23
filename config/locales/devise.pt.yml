@@ -3,7 +3,7 @@
 #
 # The translation does not respect the 1990 agreement
 
-'pt-PT':
+pt:
   devise:
     confirmations:
       confirmed: "A sua conta foi confirmada com sucesso."
