@@ -3,7 +3,7 @@
 #
 # The translation does not respect the 1990 agreement
 
-pt-PT:
+'pt-PT':
   devise:
     confirmations:
       confirmed: "A sua conta foi confirmada com sucesso."
@@ -38,7 +38,7 @@ pt-PT:
       send_instructions: "Dentro de alguns minutos irá receber um email com instruções de reinicialização da palavra-passe."
       send_paranoid_instructions: "Se o seu e-mail existir na nossa base de dados, irá receber dentro de alguns minutos um e-mail com instruções para recuperar a sua palavra-passe."
       updated: "A sua palavra-passe foi alterada com sucesso. Agora está autenticado."
-      updated_not_active: "A sua palavra-passw foi alterada com sucesso." 
+      updated_not_active: "A sua palavra-passw foi alterada com sucesso."
     registrations:
       destroyed: "A sua conta foi cancelada com sucesso. Esperamos voltar a vê-lo brevemente."
       signed_up: "Bem-vindo! A autenticação foi efectuada com sucesso."

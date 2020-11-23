@@ -1,4 +1,4 @@
-pt-PT:
+'pt-PT':
   messages:
     listing: Lista %{model}
     confirm_with: Deseja realmente apagar [%{item}]
