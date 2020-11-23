@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
+
   def change
     create_table :admins do |t|
       ## Database authenticatable
@@ -40,4 +41,5 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
     # add_index :admins, :confirmation_token,   unique: true
     # add_index :admins, :unlock_token,         unique: true
   end
+
 end

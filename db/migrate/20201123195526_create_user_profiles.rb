@@ -1,4 +1,5 @@
 class CreateUserProfiles < ActiveRecord::Migration[5.2]
+
   def change
     create_table :user_profiles do |t|
       t.string :address
@@ -9,4 +10,5 @@ class CreateUserProfiles < ActiveRecord::Migration[5.2]
       t.timestamps
     end
   end
+
 end
